@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>小社課預約</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body style="background-color: #FFF1E0;">
+
+    <!--css-->
+    <style>
+      /* include */
+      @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+      /* content */
+      *, ::after, ::before{
+          font-family: "cwTeXFangSong", serif;
+          box-sizing: border-box;
+      }
+
+      .set{
+          display: flex;
+          justify-content: space-evenly;
+      }
+
+      .btn-per {
+          color: #fff;
+          background-color: #f99f9f;
+          border-color: #f99f9f;
+          font-size: 150%;
+      }
+      .btn-per:hover {
+          color: #fff;
+          background-color: #F7CAC9;
+          border-color: #F7CAC9;
+      }
+      .btn-check:focus + .btn-per, .btn-per:focus {
+          color: #fff;
+          background-color: #F7CAC9;
+          border-color: #F7CAC9;
+          box-shadow: 0 0 0 0.25rem #F2D7D5;
+      }
+      .btn-check:checked + .btn-per, .btn-check:active + .btn-per, .btn-per:active, .btn-per.active, .show > .btn-per.dropdown-toggle {
+          color: #f99f9f;
+          background-color: #fff;
+          border-color: #f99f9f;
+      }
+      .btn-check:checked + .btn-per:focus, .btn-check:active + .btn-per:focus, .btn-per:active:focus, .btn-per.active:focus, .show > .btn-per.dropdown-toggle:focus {
+          box-shadow: 0 0 0 0.25rem #F2D7D5;
+      }
+      .btn-per:disabled, .btn-per.disabled {
+          color: #fff;
+          background-color: #F7CAC9;
+          border-color: #F7CAC9;
+      }
+    </style>
+
+      <!-- header -->
+      <nav class="navbar navbar-light sticky-top" style="background-color: #F2D1B3;">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">北資中午小社課預約系統</span>
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html" target="_blank"><b>使用說明</b></a>
+          </div>
+        </div>
+      </nav>
+
+      <br>
+
+      <!-- form -->
+      <div class="container-fluid form">
+        <form class="row g-3" id="theform">
+
+          <div class="mb-3 row">
+            <label for="number" class="form-label">要跟哪位學姊預約？</label>
+            <select class="form-select" id="who">
+              <option selected>選擇講師</option>
+              <option value="1">企鵝</option>
+              <option value="2">小卡</option>
+              <option value="3">沛沛</option>
+              <option value="4">月</option>
+            </select>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="number" class="form-label">班級座號（Ex. 一忠01）</label>
+            <input type="text" class="form-control" id="number">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="name" class="form-label">姓名/綽號</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="date" class="form-label">上課時間</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="course" class="form-label">課程主題</label>
+            <input type="text" class="form-control" id="course">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="content" class="form-label">內容簡述（大概學到哪裡or將要學什麼內容，讓學術可以先準備一下）</label>
+            <input type="text" class="form-control" id="content">
+          </div>
+
+          <button type="submit" class="btn btn-per mb-3" id="submit" style="text-align: center;">Submit</button>
+
+        </form>
+      </div>
+
+      <!--JS-->
+      <script>
+        function afterButtonClicked() {
+            var who = document.getElementById("who");
+            var number = document.getElementById("number");
+            var name = document.getElementById("name");
+            var date = document.getElementById("date");
+            var course = document.getElementById("course");
+            var content = document.getElementById("content");
+            var rowData = {
+                number: number.value,
+                name: name.value,
+                date: date.value,
+                course: course.value,
+                content: content.value
+            };
+            
+            if(who.value == 1){
+              google.script.run.addData1(rowData);
+            }else if(who.value == 2){
+              google.script.run.addData2(rowData);
+            }else if(who.value == 3){
+              google.script.run.addData3(rowData);
+            }else if(who.value == 4){
+              google.script.run.addData4(rowData);
+            }
+            document.getElementById("theform").reset();
+            alert("成功送出，要記得來上課哦！");
+        }
+
+        document.getElementById("submit").addEventListener("click", afterButtonClicked);
+      </script>
+
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script>
+          $(function(){
+              var _h = $(document).height();//取得網頁高度
+              parent.postMessage({ h: _h}, '*');//將高度值，傳到父層
+          });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

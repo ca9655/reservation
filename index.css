@@ -1,0 +1,44 @@
+/* include */
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+/* content */
+*, ::after, ::before{
+    font-family: "cwTeXFangSong", serif;
+    box-sizing: border-box;
+}
+
+.set{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-per {
+    color: #fff;
+    background-color: #f99f9f;
+    border-color: #f99f9f;
+    font-size: 150%;
+  }
+  .btn-per:hover {
+    color: #fff;
+    background-color: #F7CAC9;
+    border-color: #F7CAC9;
+  }
+  .btn-check:focus + .btn-per, .btn-per:focus {
+    color: #fff;
+    background-color: #F7CAC9;
+    border-color: #F7CAC9;
+    box-shadow: 0 0 0 0.25rem #F2D7D5;
+  }
+  .btn-check:checked + .btn-per, .btn-check:active + .btn-per, .btn-per:active, .btn-per.active, .show > .btn-per.dropdown-toggle {
+    color: #f99f9f;
+    background-color: #fff;
+    border-color: #f99f9f;
+  }
+  .btn-check:checked + .btn-per:focus, .btn-check:active + .btn-per:focus, .btn-per:active:focus, .btn-per.active:focus, .show > .btn-per.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem #F2D7D5;
+  }
+  .btn-per:disabled, .btn-per.disabled {
+    color: #fff;
+    background-color: #F7CAC9;
+    border-color: #F7CAC9;
+  }

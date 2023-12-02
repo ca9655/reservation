@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+        <title>小社課預約</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">  
+        <!--css-->
+        <style type="text/css">
+            /* include */
+            @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+    
+            /* content */
+            *, ::after, ::before{
+                font-family: "cwTeXFangSong", serif;
+                box-sizing: border-box;
+            }
+    
+            .set{
+                display: flex;
+                justify-content: space-evenly;
+            }
+    
+            .btn-per {
+                color: #fff;
+                background-color: #f99f9f;
+                border-color: #f99f9f;
+                font-size: 150%;
+            }
+            .btn-per:hover {
+                color: #fff;
+                background-color: #F7CAC9;
+                border-color: #F7CAC9;
+            }
+            .btn-check:focus + .btn-per, .btn-per:focus {
+                color: #fff;
+                background-color: #F7CAC9;
+                border-color: #F7CAC9;
+                box-shadow: 0 0 0 0.25rem #F2D7D5;
+            }
+            .btn-check:checked + .btn-per, .btn-check:active + .btn-per, .btn-per:active, .btn-per.active, .show > .btn-per.dropdown-toggle {
+                color: #f99f9f;
+                background-color: #fff;
+                border-color: #f99f9f;
+            }
+            .btn-check:checked + .btn-per:focus, .btn-check:active + .btn-per:focus, .btn-per:active:focus, .btn-per.active:focus, .show > .btn-per.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.25rem #F2D7D5;
+            }
+            .btn-per:disabled, .btn-per.disabled {
+                color: #fff;
+                background-color: #F7CAC9;
+                border-color: #F7CAC9;
+            }
+        </style>
+
+        <style type="text/css">
+            iframe{
+                display: block;
+                width: 100%;
+                height: 660px;
+                border: none;
+            }
+        </style>
+        
+    </head>
+
+    <body style="background-color: #FFF1E0;">
+        <!-- header -->
+        <nav class="navbar navbar-light sticky-top" style="background-color: #F2D1B3;">
+            <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">北資中午小社課預約系統</span>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html" target="_blank"><b>學術時間表</b></a>
+            </div>
+            </div>
+        </nav>
+
+        <iframe src="https://script.google.com/macros/s/AKfycbyhaH8IIme76K6-vVvKE0sPvO1RrNVq1FYNQDHQt8jQ946zuccVXkFSZwvx7GckCD-WaQ/exec" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto">
+        </iframe>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
